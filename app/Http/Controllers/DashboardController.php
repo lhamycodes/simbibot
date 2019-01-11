@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Question;
 use App\Exam;
 use App\Test;
+use App\TestTaken;
 use DB;
 
 class DashboardController extends Controller
@@ -68,6 +69,18 @@ class DashboardController extends Controller
             ];
             array_push($arrayExamQuestions, $arrayToPush);
         }
+
+        $maxOccuringTestID = TestTaken::max('test_id');
+        $minOccuringTestID = TestTaken::min('test_id');
+
+        $maxTest = strtoupper(Test::find($maxOccuringTestID)->title);
+        $minTest = strtoupper(Test::find($minOccuringTestID)->title);
+
+        $testPopularityArray = array();
+        $maxTestArr = ['Test with Highest Attempts' => $maxTest];
+        $minTestArr = ['Test with Lowest Attempts' => $minTest];
+
+        array_push($statisticsArray, $maxTestArr, $minTestArr);
 
         // dd($statisticsArray);
         return view('dashboard', ['basic' => $statisticsArray, 'numTest' => $arrayExamQuestions]);
