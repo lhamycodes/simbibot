@@ -9,7 +9,7 @@ that displays the following statistics in a well designed layout (tabular format
 - Number of tests in an exam -- Done
 - Number of questions in an exam -- Done
 - Foreach exam, number of questions with topics, number with explanation
-- Test with the highest number of attempts, and test with the lowest number of attempts
+- Test with the highest number of attempts, and test with the lowest number of attempts -- Done
 
 - Use Laravel Seeders to create the administrator account with the details: [Name, email and password]
 - Create a login page for admin
