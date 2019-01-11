@@ -44,7 +44,7 @@ class DashboardController extends Controller
         array_push($statisticsArray, $numQuestionArray, $numExplanationArray, $numTopicArray, $numExamArray);
         
         $exms = Exam::with(['tests', 'tests.questions'])->get();
-        dd($exms[0]);
+        // dd($exms[0]);
         $exams = Exam::select('id', 'name')->get();
         $arrayExamQuestions = array();
         for($i = 0; $i < count($exams); $i++){
