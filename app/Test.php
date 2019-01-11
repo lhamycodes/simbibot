@@ -8,7 +8,7 @@ class Test extends Model
 {
     protected $table = "tests";
 
-    public function question(){
-        $this->hasMany('App\Question');
+    public function questions(){
+        return $this->hasMany(Question::class, 'test_id');
     }
 }

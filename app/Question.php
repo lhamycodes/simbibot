@@ -9,6 +9,6 @@ class Question extends Model
     protected $table = "questions";
 
     public function test(){
-        $this->belongsTo('App\Test');
+        return $this->belongsTo(Test::class);
     }
 }

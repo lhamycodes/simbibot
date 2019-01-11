@@ -43,6 +43,8 @@ class DashboardController extends Controller
 
         array_push($statisticsArray, $numQuestionArray, $numExplanationArray, $numTopicArray, $numExamArray);
         
+        $exms = Exam::with(['tests', 'tests.questions'])->get();
+        dd($exms[0]);
         $exams = Exam::select('id', 'name')->get();
         $arrayExamQuestions = array();
         for($i = 0; $i < count($exams); $i++){
@@ -50,7 +52,6 @@ class DashboardController extends Controller
             $countTestValue = Test::where('super_exam_id', $exams[$i]->id)->count();
             $testQuestions = Test::select('id', 'amount')->where('super_exam_id', $exams[$i]->id)->get();
 
-            // dd($testQuestions);
             $tq = array();
             for($k = 0; $k < count($testQuestions); $k++){
                 $currExamValue = Question::where('test_id', $testQuestions[$k]->id)->count();
