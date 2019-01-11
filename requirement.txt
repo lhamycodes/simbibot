@@ -1,0 +1,27 @@
+SimbiBot Volunteering Programming Task Test
+__________________
+Using the database schema sent to you, together with a little sample data, create a page (or multi-pages) 
+that displays the following statistics in a well designed layout (tabular format preferred):
+- Total number of questions -- Done
+- Total questions with explanations -- Done
+- Total Questions having topics -- Done
+- Number of exams -- Done
+- Number of tests in an exam -- Done
+- Number of questions in an exam -- Done
+- Foreach exam, number of questions with topics, number with explanation
+- Test with the highest number of attempts, and test with the lowest number of attempts
+
+- Use Laravel Seeders to create the administrator account with the details: [Name, email and password]
+- Create a login page for admin
+- Use Laravel validation function to validate the login details
+- Your statistics page(s) should be only be available for viewing after admin is logged in
+- Admin should be able to logout
+
+A brief Explanation to aid you:
+- Table `exams` is a top level categorization of available examinations
+- Table `tests` is a child of `exams`. `tests` are the subjects contained in an `exam`
+- Table `questions` contains questions which are attached to tests via the `test_id` column.
+- Table `tests_taken` contains a record of tests taken by users
+
+Task is to be hosted on git and submitted on or before Friday, 9pm.
+The git url should be sent to me on whatsapp
